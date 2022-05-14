@@ -33,8 +33,11 @@ function menu() {
         name: "choice",
         message: "What would you like to do?",
         choices: ["View All Employees", "Add Employee", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department"]
-      },
-      .then((data) => {
+      },])
+      return data;
+    };
+      
+      function data (data) {
         if (data.choice === "Add Department")
           inquirer
             .prompt([
@@ -48,8 +51,7 @@ function menu() {
                   console.log(results);
                 });
               })
-        })])
-}
+        }
 
 // app.get('/', (req, res) => {
 //   db.query('SELECT * FROM favorite_books', function (err, results) {

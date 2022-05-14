@@ -5,10 +5,10 @@ VALUES ("IT"),
        ("Security");
 
 INSERT INTO role (title, salsary, department_id)
-VALUES ("Manager", 75,000.00, 3),
-       ("Assistant", 55,000.00, 3),
-       ("Guard", 55,000.00, 4),
-       ("Developer", 100,000.00, 1);
+VALUES ("Manager", 75000, 3),
+       ("Assistant", 55000, 3),
+       ("Guard", 55000, 4),
+       ("Developer", 100000, 1);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES ("April", "Showers", 1, 4),

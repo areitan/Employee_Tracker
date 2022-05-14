@@ -67,9 +67,11 @@ In order to create this application, I used the skills I have at the moment. I a
 - [Coding Boot Camp: Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
-- [Express.js Documentation](https://www.npmjs.com/package/express)
-
 - [MySQL2](https://www.npmjs.com/package/mysql2)
+- [Express.js Documentation](https://www.npmjs.com/package/express)
+- [W3 Schools: SQL Server CONCAT() Function](https://www.w3schools.com/sql/func_sqlserver_concat.asp)
+
+
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 12 exercises.
 - Chris Baird, my tutor
 
