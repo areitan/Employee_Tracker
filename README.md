@@ -5,7 +5,7 @@
 ---
 ## Description
 
-
+The goal is to produce a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [Express.js](https://www.npmjs.com/package/express), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should 
   
 
 ---
@@ -22,7 +22,7 @@
 ---
 ## Installation
 
- 
+ Inquirer, Node.js, and MySQL are needed for this application.
 
 - [Employee Tracker Git Hub Repository](https://github.com/areitan/Employee_Tracker)
 - [Employee Tracker Walkthrough Video Link](********)
@@ -31,21 +31,23 @@
 ---
 ## Usage
 
-The purpose of this exercise is to   
+Using a command line application, the user should be able to enter information given prompts to view inforamtion from the database and add to it. The application is initialized by navigating to the project folder and running ```node server.js```.
+
+### Sample Table Structure
+![Sample Table Structure](/assets/12-sql-homework-demo-01.png)
+
+### Sample Command-line Video Screenshot
+![Sample Table Structure](/assets/12-sql-homework-video-thumbnail.png)
 
 ### Initialization
-![Initializing the application](/assets/images/initialize1.png)
+![Initializing the application](/assets/******.png)
 
 ### Follow The Prompts
-![Follow The Prompts](/assets/images/prompt2.png)
+![Follow The Prompts](/assets/******.png)
 
-![Follow The Prompts2](/assets/images/prompt3.png)
+![Follow The Prompts2](/assets/******.png)
 
-### Sample README
-![Sample README](/assets/images/sample_README.png)
 
-### Sample README Preview
-![Sample README Preview](/assets/images/sample_README_Preview.png)
 
 
 ---
@@ -63,6 +65,11 @@ In order to create this application, I used the skills I have at the moment. I a
 ## Credits
 
 - [Coding Boot Camp: Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
+- [Express.js Documentation](https://www.npmjs.com/package/express)
+
+- [MySQL2](https://www.npmjs.com/package/mysql2)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 12 exercises.
 - Chris Baird, my tutor
 
