@@ -5,7 +5,7 @@ employee.last_name,
 role.title, 
 department.name AS department, 
 role.salary AS salary,
-CONCAT('employee.first_name', 'employee.last_name') AS manager;
+CONCAT('employee.first_name', ' ', 'employee.last_name') AS manager;
 
 FROM employee
 LEFT JOIN role
