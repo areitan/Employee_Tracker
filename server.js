@@ -16,7 +16,6 @@ const db = mysql.createConnection(
   console.log(`Connected to employee_db database.`)
 );
 
-
 // Menu function using inquirer
 function menu() {
   inquirer
@@ -40,6 +39,86 @@ function menu() {
             const sql = `INSERT INTO department (name)
               VALUES (?)`;
             db.query(sql, [name], (err, result) => {
+              menu();
+            })
+          })
+      }
+      if (data.choice === "Add Role") {
+        inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "title",
+          message: "What is the title?",
+        },
+        {
+          type: "input",
+          name: "salary",
+          message: "What is the salary?",
+        },
+        {
+          type: "input",
+          name: "department_id",
+          message: "What is the department this role belong to?",
+        }
+      ])
+          .then(({ title, salary, department_id }) => {
+            const sql = `INSERT INTO department (title, salary, department_id)
+            VALUES (?,?,?)`;
+            db.query(sql, [title, salary, department_id], (err, result) => {
+              menu();
+            })
+          })
+      }
+      if (data.choice === "Add Employee") {
+        inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "first_name",
+          message: "What is the employee's first name?",
+        },
+        {
+          type: "input",
+          name: "last_name",
+          message: "What is the employee's first name?",
+        },
+        {
+          type: "input",
+          name: "role_id",
+          message: "What is the employee's role id?",
+        },
+        {
+          type: "input",
+          name: "manager_id",
+          message: "What is the employee's manager's id?",
+        }
+      ])
+          .then(({ first_name, last_name, role_id,manager_id }) => {
+            const sql = `INSERT INTO department (first_name, last_name, role_id, manager_id)
+            VALUES (?,?,?,?)`;
+            db.query(sql, [first_name, last_name, role_id, manager_id], (err, result) => {
+              menu();
+            })
+          })
+      }
+            if (data.choice === "Update Employee Role") {
+        inquirer
+          .prompt([
+            {
+              type: "input",
+              name: "id",
+              message: "What is the employee's id?",
+            },
+            {
+              type: "input",
+              name: "role_id",
+              message: "What is the employee's new role id?",
+            },
+          ])
+          .then(({ id, role_id }) => {
+            const sql = `UPDATE employee SET role_id = ? WHERE id = ?`;
+            db.query(sql, [id, role_id], (err, result) => {
               menu();
             })
           })
@@ -77,122 +156,8 @@ function menu() {
           menu();
         });
       }
-      if (data.choice === "Update Employee Role") {
-        inquirer
-          .prompt([
-            {
-              type: "input",
-              name: "id",
-              message: "What is the employee's id?",
-            },
-            {
-              type: "input",
-              name: "role_id",
-              message: "What is the employee's new role id?",
-            },
-          ])
-          .then((data) => {
-            const sql = `UPDATE employee SET role_id = ? WHERE id = ?`;
-
-            db.query(sql, [], (err, result) => {
-              if (err) {
-                res.status(400).json({ error: err.message });
-              }
-            })
-            menu();
-          })
-      };
     });
 };
-
-
-
-// // Add a Role
-// .then((data) => {
-//   if (data.choice === "Add Role") {
-//     inquirer
-//       .prompt([
-//         {
-//           type: "input",
-//           name: "title",
-//           message: "What is the title?",
-//         },
-//         {
-//           type: "input",
-//           name: "salary",
-//           message: "What is the salary?",
-//         },
-//         {
-//           type: "input",
-//           name: "department_id",
-//           message: "What is the department this role belong to?",
-//         }
-//       ]),
-//       app.post("/api", ({ body }, res) => {
-//         const sql = `INSERT INTO role (title, salary, department_id) 
-//             VALUES (?,?,?)`;
-//         const params = [body.movie_name];
-//         db.query(sql, params, (err, result) => {
-//           if (err) {
-//             res.status(400).json({ error: err.message });
-//             return;
-//           }
-//           res.json({
-//             message: "success",
-//             data: body,
-//           });
-//         })
-//       });
-//   }
-//   menu();
-// });
-
-// // Add an Employee
-// .then((data) => {
-//   if (data.choice === "Add Employee") {
-//     inquirer
-//       .prompt([
-//         {
-//           type: "input",
-//           name: "first_name",
-//           message: "What is the employee's first name?",
-//         },
-//         {
-//           type: "input",
-//           name: "last_name",
-//           message: "What is the employee's first name?",
-//         },
-//         {
-//           type: "input",
-//           name: "role_id",
-//           message: "What is the employee's role id?",
-//         },
-//         {
-//           type: "input",
-//           name: "manager_id",
-//           message: "What is the employee's manager's id?",
-//         }
-//       ]),
-//       app.post("/api", ({ body }, res) => {
-//         const sql = `INSERT INTO employee (first_name, last_name, role_id,manager_id)
-//             VALUES (?,?,?,?)`;
-//         const params = [body.movie_name];
-//         db.query(sql, params, (err, result) => {
-//           if (err) {
-//             res.status(400).json({ error: err.message });
-//             return;
-//           }
-//           res.json({
-//             message: "success",
-//             data: body,
-//           });
-//         })
-//       });
-//   }
-//   menu();
-// });
-
-
 
 function init() {
   menu();
