@@ -55,6 +55,28 @@ function menu() {
           menu();
         });
       }
+      if (data.choice === "View All Employees") {
+        const sql = `SELECT * FROM employee`;
+        db.query(sql, (err, rows) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          console.table(rows)
+          menu();
+        });
+      }
+      if (data.choice === "View All Roles") {
+        const sql = `SELECT * FROM role`;
+        db.query(sql, (err, rows) => {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          console.table(rows)
+          menu();
+        });
+      }
       if (data.choice === "Update Employee Role") {
         inquirer
           .prompt([
@@ -70,21 +92,19 @@ function menu() {
             },
           ])
           .then((data) => {
-        const sql = `UPDATE employee SET role_id = ? WHERE id = ?`;
-      
-        db.query(sql, [], (err, result) => {
-          if (err) {
-            res.status(400).json({ error: err.message });
-          }
-        })
-        menu();
-      })
+            const sql = `UPDATE employee SET role_id = ? WHERE id = ?`;
+
+            db.query(sql, [], (err, result) => {
+              if (err) {
+                res.status(400).json({ error: err.message });
+              }
+            })
+            menu();
+          })
       };
     });
 };
 
-
-// Add a department modeled after week 12 ex 28 mini project
 
 
 // // Add a Role
@@ -172,55 +192,7 @@ function menu() {
 //   menu();
 // });
 
-// // update an Employee Role
-// .then((data) => {
-//   
 
-// // View department Table
-// .then((data) => {
-//         
-//         menu();
-//       });
-
-// // View role Table
-// .then((data) => {
-//         if (data.choice === "View All Roles") {
-//           app.get('/api', (req, res) => {
-//             const sql = `'SELECT * FROM role;`;
-//             db.query(sql, (err, rows) => {
-//               if (err) {
-//                 res.status(500).json({ error: err.message });
-//                 return;
-//               }
-//               res.json({
-//                 message: "success",
-//                 data: rows,
-//               });
-//             })
-//           });
-//         }
-//         menu();
-//       });
-
-// // View employees Table
-// .then((data) => {
-//         if (data.choice === "View All Employees") {
-//           app.get('/api', (req, res) => {
-//             const sql = `'SELECT * FROM employee;`;
-//             db.query(sql, (err, rows) => {
-//               if (err) {
-//                 res.status(500).json({ error: err.message });
-//                 return;
-//               }
-//               res.json({
-//                 message: "success",
-//                 data: rows,
-//               });
-//             })
-//           });
-//         }
-//         menu();
-//       });
 
 function init() {
   menu();
