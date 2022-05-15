@@ -16,7 +16,6 @@ const db = mysql.createConnection(
   console.log(`Connected to employee_db database.`)
 );
 
-// const userInput = []
 
 // Menu function using inquirer
 function menu() {
