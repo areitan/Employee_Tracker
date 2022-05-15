@@ -7,7 +7,7 @@ const inquirer = require("inquirer");
 // Import and console.table
 const consoleTable = require("console.table");
 
-// ?
+
 const { init } = require("express/lib/application");
 
 // adding port and app express
@@ -31,6 +31,8 @@ const db = mysql.createConnection(
   console.log(`Connected to employee_db database.`)
 );
 
+// const input = []
+
 // Menu function using inquirer
 function menu() {
   inquirer
@@ -44,7 +46,7 @@ function menu() {
   return data;
 };
 
-// Add a department
+// Add a department modeled after week 12 ex 28 mini project
 .then((data) => {
   if (data.choice === "Add Department") {
     inquirer
@@ -54,16 +56,103 @@ function menu() {
           name: "name",
           message: "What is the department name?",
         }]),
-      app.get('/db', (req, res) => {
-        const sql = `'INSERT name INTO department;`;
-        db.query(sql, (err, rows) => {
+      app.post("/db", ({ body }, res) => {
+        const sql = `INSERT INTO department (name)
+            VALUES (?)`;
+        const params = [body.movie_name];
+        db.query(sql, params, (err, result) => {
           if (err) {
-            res.status(500).json({ error: err.message });
+            res.status(400).json({ error: err.message });
             return;
           }
           res.json({
             message: "success",
-            data: rows,
+            data: body,
+          });
+        })
+      });
+  }
+  menu();
+});
+
+// Add a Role
+.then((data) => {
+  if (data.choice === "Add Role") {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "title",
+          message: "What is the title?",
+        },
+        {
+          type: "input",
+          name: "salary",
+          message: "What is the salary?",
+        },
+        {
+          type: "input",
+          name: "department_id",
+          message: "What is the department this role belong to?",
+        }
+      ]),
+      app.post("/db", ({ body }, res) => {
+        const sql = `INSERT INTO role (title, salary, department_id) 
+            VALUES (?,?,?)`;
+        const params = [body.movie_name];
+        db.query(sql, params, (err, result) => {
+          if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+          }
+          res.json({
+            message: "success",
+            data: body,
+          });
+        })
+      });
+  }
+  menu();
+});
+
+// Add an Employee
+.then((data) => {
+  if (data.choice === "Add Employee") {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "first_name",
+          message: "What is the employee's first name?",
+        },
+        {
+          type: "input",
+          name: "last_name",
+          message: "What is the employee's first name?",
+        },
+        {
+          type: "input",
+          name: "role_id",
+          message: "What is the employee's role id?",
+        },
+        {
+          type: "input",
+          name: "manager_id",
+          message: "What is the employee's manager's id?",
+        }
+      ]),
+      app.post("/db", ({ body }, res) => {
+        const sql = `INSERT INTO employee (title, salary, department_id) VALUES (?,?,?)
+            VALUES (?)`;
+        const params = [body.movie_name];
+        db.query(sql, params, (err, result) => {
+          if (err) {
+            res.status(400).json({ error: err.message });
+            return;
+          }
+          res.json({
+            message: "success",
+            data: body,
           });
         })
       });
@@ -75,7 +164,7 @@ function menu() {
 .then((data) => {
   if (data.choice === "View All Departments") {
     app.get('/db', (req, res) => {
-      const sql = `'SELECT * FROM department;`;
+      const sql = `'SELECT id, name AS Department FROM department;`;
       db.query(sql, (err, rows) => {
         if (err) {
           res.status(500).json({ error: err.message });
@@ -110,8 +199,6 @@ function menu() {
   }
   menu();
 });
-
-
 
 // View employees Table
 .then((data) => {
