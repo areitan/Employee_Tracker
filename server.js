@@ -81,7 +81,7 @@ function menu() {
         {
           type: "input",
           name: "last_name",
-          message: "What is the employee's first name?",
+          message: "What is the employee's last name?",
         },
         {
           type: "input",
