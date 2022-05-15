@@ -1,10 +1,10 @@
-NSERT INTO department (dept_name)
+NSERT INTO department (name)
 VALUES ("IT"),
        ("Accounting"),
        ("Facilities"),
        ("Security");
 
-INSERT INTO role (title, salsary, department_id)
+INSERT INTO role (title, salary, department_id)
 VALUES ("Manager", 75000, 3),
        ("Assistant", 55000, 3),
        ("Guard", 55000, 4),

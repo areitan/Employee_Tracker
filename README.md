@@ -67,8 +67,6 @@ In order to create this application, I used the skills I have at the moment. I a
 - [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [W3 Schools: SQL Server CONCAT() Function](https://www.w3schools.com/sql/func_sqlserver_concat.asp)
-
-
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 12 exercises.
 - Chris Baird, my tutor
 
