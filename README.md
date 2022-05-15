@@ -37,15 +37,22 @@ Using a command line application, the user should be able to enter information g
 ![Sample Table Structure](/assets/12-sql-homework-demo-01.png)
 
 ### Sample Command-line Video Screenshot
-![Sample Table Structure](/assets/12-sql-homework-video-thumbnail.png)
+![Sample Video Screenshot](/assets/12-sql-homework-video-thumbnail.png)
 
 ### Initialization
-![Initializing the application](/assets/******.png)
+![Initializing the application](/assets/1_initialization.png)
 
-### Follow The Prompts
-![Follow The Prompts](/assets/******.png)
+### Select From The Menu
+![Select From The Menu](/assets/2_menu.png)
 
-![Follow The Prompts2](/assets/******.png)
+### View All Departments And Add A New Department
+![View All Departments And Add A New Department](/assets/3_department.png)
+
+### View All Roles And Add A New Role
+![### View All Roles And Add A New Role](/assets/4_role.png)
+
+### View All Employees And Add A New Employee
+![View All Employees And Add A New Employee](/assets/5_employee.png)
 
 
 ---
