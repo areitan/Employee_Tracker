@@ -63,7 +63,7 @@ function menu() {
         }
       ])
           .then(({ title, salary, department_id }) => {
-            const sql = `INSERT INTO department (title, salary, department_id)
+            const sql = `INSERT INTO role (title, salary, department_id)
             VALUES (?,?,?)`;
             db.query(sql, [title, salary, department_id], (err, result) => {
               menu();
@@ -95,7 +95,7 @@ function menu() {
         }
       ])
           .then(({ first_name, last_name, role_id,manager_id }) => {
-            const sql = `INSERT INTO department (first_name, last_name, role_id, manager_id)
+            const sql = `INSERT INTO employee (first_name, last_name, role_id, manager_id)
             VALUES (?,?,?,?)`;
             db.query(sql, [first_name, last_name, role_id, manager_id], (err, result) => {
               menu();
