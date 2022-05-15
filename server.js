@@ -4,8 +4,10 @@ const express = require("express");
 const mysql = require("mysql2");
 // require inquirer
 const inquirer = require("inquirer");
-// require inquirer
-const fs = require("fs");
+// Import and console.table
+const consoleTable = require("console.table");
+
+// ?
 const { init } = require("express/lib/application");
 
 // adding port and app express
@@ -31,71 +33,107 @@ const db = mysql.createConnection(
 
 // Menu function using inquirer
 function menu() {
-    inquirer
-        .prompt([
-            {
-                type: "list",
-                name: "choice",
-                message: "What would you like to do?",
-                choices: ["View All Employees", "Add Employee", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department"]
-            },])
-    return data;
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "choice",
+        message: "What would you like to do?",
+        choices: ["View All Employees", "Add Employee", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department"]
+      },])
+  return data;
 };
 
 // Add a department
-function newDepartment() {
-    if (data.choice === "Add Department")
-        inquirer
-            .prompt([
-                {
-                    type: "input",
-                    name: "name",
-                    message: "What is the department name?",
-                }]),
-            app.get('/', (req, res) => {
-                db.query('INSERT "name" INTO department', function (err, results) {
-                    console.log(results);
-                });
-                menu();
-            })
-};
+.then((data) => {
+  if (data.choice === "Add Department") {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "name",
+          message: "What is the department name?",
+        }]),
+      app.get('/db', (req, res) => {
+        const sql = `'INSERT name INTO department;`;
+        db.query(sql, (err, rows) => {
+          if (err) {
+            res.status(500).json({ error: err.message });
+            return;
+          }
+          res.json({
+            message: "success",
+            data: rows,
+          });
+        })
+      });
+  }
+  menu();
+});
 
 // View department Table
-function viewDepartments() {
-    if (data.choice === "View All Departments")
-        app.get('/', (req, res) => {
-            db.query('SELECT * FROM department', function (err, results) {
-                console.log(results);
-            });
-            menu();
-        })
-};
+.then((data) => {
+  if (data.choice === "View All Departments") {
+    app.get('/db', (req, res) => {
+      const sql = `'SELECT * FROM department;`;
+      db.query(sql, (err, rows) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+          return;
+        }
+        res.json({
+          message: "success",
+          data: rows,
+        });
+      })
+    });
+  }
+  menu();
+});
 
 // View role Table
-function viewRoles() {
-    if (data.choice === "View All Roles")
-        app.get('/', (req, res) => {
-            db.query('SELECT * FROM role', function (err, results) {
-                console.log(results);
-            });
-            menu();
-        })
-};
+.then((data) => {
+  if (data.choice === "View All Roles") {
+    app.get('/db', (req, res) => {
+      const sql = `'SELECT * FROM role;`;
+      db.query(sql, (err, rows) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+          return;
+        }
+        res.json({
+          message: "success",
+          data: rows,
+        });
+      })
+    });
+  }
+  menu();
+});
+
+
 
 // View employees Table
-function viewEmployees() {
-    if (data.choice === "View All Employees")
-        app.get('/', (req, res) => {
-            db.query('SELECT * FROM employee', function (err, results) {
-                console.log(results);
-            });
-            menu();
-        })
-};
+.then((data) => {
+  if (data.choice === "View All Employees") {
+    app.get('/db', (req, res) => {
+      const sql = `'SELECT * FROM employee;`;
+      db.query(sql, (err, rows) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+          return;
+        }
+        res.json({
+          message: "success",
+          data: rows,
+        });
+      })
+    });
+  }
+  menu();
+});
 
-// 
-
-init() {
+function init() {
   menu();
 };
 
