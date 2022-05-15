@@ -5,7 +5,7 @@
 ---
 ## Description
 
-The goal is to produce a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [Express.js](https://www.npmjs.com/package/express), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should 
+The goal is to produce a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [Express.js](https://www.npmjs.com/package/express), [console.table](https://www.npmjs.com/package/console.table), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should 
   
 
 ---
