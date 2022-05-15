@@ -22,7 +22,7 @@ The goal is to produce a command-line content management system using [Node.js d
 ---
 ## Installation
 
- Inquirer, Node.js, Express.js, and MySQL are needed for this application.
+ Inquirer, Node.js, console.table, and MySQL are needed for this application.
 
 - [Employee Tracker Git Hub Repository](https://github.com/areitan/Employee_Tracker)
 - [Employee Tracker Walkthrough Video Link](********)
@@ -69,7 +69,6 @@ In order to create this application, I used the skills I have at the moment. I a
 ---
 ## Credits
 
-- [Coding Boot Camp: Professional README Guide](https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide)
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
