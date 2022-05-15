@@ -5,7 +5,7 @@
 ---
 ## Description
 
-The goal is to produce a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [Express.js](https://www.npmjs.com/package/express), [console.table](https://www.npmjs.com/package/console.table), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should 
+The goal is to produce a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [console.table](https://www.npmjs.com/package/console.table), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should 
   
 
 ---
@@ -22,7 +22,7 @@ The goal is to produce a command-line content management system using [Node.js d
 ---
 ## Installation
 
- Inquirer, Node.js, and MySQL are needed for this application.
+ Inquirer, Node.js, Express.js, and MySQL are needed for this application.
 
 - [Employee Tracker Git Hub Repository](https://github.com/areitan/Employee_Tracker)
 - [Employee Tracker Walkthrough Video Link](********)
@@ -48,8 +48,6 @@ Using a command line application, the user should be able to enter information g
 ![Follow The Prompts2](/assets/******.png)
 
 
-
-
 ---
 ## Tests
 
@@ -68,7 +66,6 @@ In order to create this application, I used the skills I have at the moment. I a
 - [Node.js Documentation](https://nodejs.org/en/docs/)
 - [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
-- [Express.js Documentation](https://www.npmjs.com/package/express)
 - [W3 Schools: SQL Server CONCAT() Function](https://www.w3schools.com/sql/func_sqlserver_concat.asp)
 
 
