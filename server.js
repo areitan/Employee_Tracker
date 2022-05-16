@@ -27,6 +27,7 @@ function menu() {
         choices: ["View All Employees", "Add Employee", "Update Employee Role", "View All Roles", "Add Role", "View All Departments", "Add Department"]
       },])
     .then((data) => {
+      // Add Department
       if (data.choice === "Add Department") {
         inquirer
           .prompt([
@@ -43,25 +44,26 @@ function menu() {
             })
           })
       }
+      // Add Role
       if (data.choice === "Add Role") {
         inquirer
-      .prompt([
-        {
-          type: "input",
-          name: "title",
-          message: "What is the title?",
-        },
-        {
-          type: "input",
-          name: "salary",
-          message: "What is the salary?",
-        },
-        {
-          type: "input",
-          name: "department_id",
-          message: "What is the department this role belong to?",
-        }
-      ])
+          .prompt([
+            {
+              type: "input",
+              name: "title",
+              message: "What is the title?",
+            },
+            {
+              type: "input",
+              name: "salary",
+              message: "What is the salary?",
+            },
+            {
+              type: "input",
+              name: "department_id",
+              message: "What is the department this role belong to?",
+            }
+          ])
           .then(({ title, salary, department_id }) => {
             const sql = `INSERT INTO role (title, salary, department_id)
             VALUES (?,?,?)`;
@@ -70,31 +72,32 @@ function menu() {
             })
           })
       }
+      // Add Employee
       if (data.choice === "Add Employee") {
         inquirer
-      .prompt([
-        {
-          type: "input",
-          name: "first_name",
-          message: "What is the employee's first name?",
-        },
-        {
-          type: "input",
-          name: "last_name",
-          message: "What is the employee's last name?",
-        },
-        {
-          type: "input",
-          name: "role_id",
-          message: "What is the employee's role id?",
-        },
-        {
-          type: "input",
-          name: "manager_id",
-          message: "What is the employee's manager's id?",
-        }
-      ])
-          .then(({ first_name, last_name, role_id,manager_id }) => {
+          .prompt([
+            {
+              type: "input",
+              name: "first_name",
+              message: "What is the employee's first name?",
+            },
+            {
+              type: "input",
+              name: "last_name",
+              message: "What is the employee's last name?",
+            },
+            {
+              type: "input",
+              name: "role_id",
+              message: "What is the employee's role id?",
+            },
+            {
+              type: "input",
+              name: "manager_id",
+              message: "What is the employee's manager's id?",
+            }
+          ])
+          .then(({ first_name, last_name, role_id, manager_id }) => {
             const sql = `INSERT INTO employee (first_name, last_name, role_id, manager_id)
             VALUES (?,?,?,?)`;
             db.query(sql, [first_name, last_name, role_id, manager_id], (err, result) => {
@@ -102,6 +105,7 @@ function menu() {
             })
           })
       }
+      // Update Employee Role
       if (data.choice === "Update Employee Role") {
         inquirer
           .prompt([
@@ -123,6 +127,7 @@ function menu() {
             })
           })
       }
+      // View All Departments
       if (data.choice === "View All Departments") {
         const sql = `SELECT id, name AS Department FROM department`;
         db.query(sql, (err, rows) => {
@@ -135,7 +140,7 @@ function menu() {
         });
       }
       if (data.choice === "View All Employees") {
-        const sql = `SELECT * FROM employee`;
+        const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title, role.salary, CONCAT('employee.first_name'," ", 'employee.last_name') AS manager FROM employee JOIN role ON employee.role_id = role.id`;
         db.query(sql, (err, rows) => {
           if (err) {
             console.log(err);
@@ -145,6 +150,7 @@ function menu() {
           menu();
         });
       }
+      // View All Roles
       if (data.choice === "View All Roles") {
         const sql = `SELECT role.title AS Title, role.id AS Role_ID, department.name AS Department, role.salary AS Salary FROM role JOIN department ON role.department_id = department.id`;
         db.query(sql, (err, rows) => {
@@ -159,6 +165,7 @@ function menu() {
     });
 };
 
+// Application start
 function init() {
   menu();
 };
