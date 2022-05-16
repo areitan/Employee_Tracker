@@ -25,7 +25,7 @@ This is a command-line content management system using [Node.js documentation](h
  Inquirer, Node.js, console.table, and MySQL are needed for this application.
 
 - [Employee Tracker Git Hub Repository](https://github.com/areitan/Employee_Tracker)
-- [Employee Tracker Walkthrough Video Link](********)
+- [Employee Tracker Walkthrough Video Link](https://drive.google.com/file/d/17mMduTAYzVNo2WeGdDMumV-JrQHvJt9d/view)
 
 
 ---
