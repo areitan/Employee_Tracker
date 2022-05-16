@@ -102,7 +102,7 @@ function menu() {
             })
           })
       }
-            if (data.choice === "Update Employee Role") {
+      if (data.choice === "Update Employee Role") {
         inquirer
           .prompt([
             {
@@ -118,7 +118,7 @@ function menu() {
           ])
           .then(({ id, role_id }) => {
             const sql = `UPDATE employee SET role_id = ? WHERE id = ?`;
-            db.query(sql, [id, role_id], (err, result) => {
+            db.query(sql, [role_id, id], (err, result) => {
               menu();
             })
           })
@@ -146,7 +146,7 @@ function menu() {
         });
       }
       if (data.choice === "View All Roles") {
-        const sql = `SELECT * FROM role`;
+        const sql = `SELECT role.title AS Title, role.id AS Role_ID, department.name AS Department, role.salary AS Salary FROM role JOIN department ON role.department_id = department.id`;
         db.query(sql, (err, rows) => {
           if (err) {
             console.log(err);
