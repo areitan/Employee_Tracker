@@ -5,7 +5,7 @@
 ---
 ## Description
 
-The goal is to produce a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [console.table](https://www.npmjs.com/package/console.table), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should 
+This is a command-line content management system using [Node.js documentation](https://nodejs.org/en/docs/), [Inquirer](https://www.npmjs.com/package/inquirer), [console.table](https://www.npmjs.com/package/console.table), and [MySQL2](https://www.npmjs.com/package/mysql2). The application should prompt the user with a menu of options and query/alter the database depending on user input.
   
 
 ---
@@ -73,6 +73,8 @@ In order to create this application, I used the skills I have at the moment. I a
 - [Inquirer Documentation](https://www.npmjs.com/package/inquirer)
 - [MySQL2](https://www.npmjs.com/package/mysql2)
 - [W3 Schools: SQL Server CONCAT() Function](https://www.w3schools.com/sql/func_sqlserver_concat.asp)
+- [Big Data Tutorials: Self Join SQL Tutorial with Example](https://www.youtube.com/watch?v=ck8mVDOOCCg)
+- [Joey Blue: SQL Self Join | Quick Tips Ep58](https://www.youtube.com/watch?v=ck8mVDOOCCg)
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 12 exercises.
 - Chris Baird, my tutor
 

@@ -140,7 +140,7 @@ function menu() {
         });
       }
       if (data.choice === "View All Employees") {
-        const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title, role.salary, CONCAT('employee.first_name'," ", 'employee.last_name') AS manager FROM employee JOIN role ON employee.role_id = role.id`;
+        const sql = `SELECT employee.id, employee.first_name, employee.last_name, role.title, department.name AS department, role.salary, CONCAT(mgr.first_name," ", mgr.last_name) AS manager FROM employee LEFT JOIN employee mgr ON mgr.id = employee.manager_id LEFT JOIN role ON employee.role_id = role.id LEFT JOIN department ON role.department_id = department.id`;
         db.query(sql, (err, rows) => {
           if (err) {
             console.log(err);
