@@ -36,8 +36,8 @@ Using a command line application, the user should be able to enter information g
 ### Sample Table Structure
 ![Sample Table Structure](/assets/12-sql-homework-demo-01.png)
 
-### Sample Command-line Video Screenshot
-![Sample Video Screenshot](/assets/12-sql-homework-video-thumbnail.png)
+### Example Command-line Video
+[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](/assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
 
 ### Initialization
 ![Initializing the application](/assets/1_initialization.png)
@@ -66,6 +66,7 @@ For this project, I tested the application manually by entering input as a user 
 
 In order to create this application, I used the skills I have at the moment. I am open to suggestions, if there are ways to streamline the code or if any bugs are found.
 
+
 ---
 ## Credits
 
@@ -78,9 +79,11 @@ In order to create this application, I used the skills I have at the moment. I a
 - Trilogy Education Services, LLC for the starter code and example code throughout the week 12 exercises.
 - Chris Baird, my tutor
 
+
 ### Questions
 
 For any question, please contact me on GitHub at: [areitan](https://github.com/areitan) or by email at <areitan@fredhutch.org>.
+
 
 ---
 
